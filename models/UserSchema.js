@@ -14,8 +14,11 @@ const UserSchema = new mongoose.Schema({
     },
     password:{
         require:true,
-        type: String
+        type: String,
+        min: 8
     }
 })
 
-module.exports = UserSchema
+const Users = mongoose.model("Users",UserSchema)
+
+module.exports = Users
